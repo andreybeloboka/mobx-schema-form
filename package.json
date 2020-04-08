@@ -4,10 +4,11 @@
   "description": "Connects MobX FormStore, React-Schema-Form and React-Toolbox",
   "main": "./lib/index.js",
   "scripts": {
-    "build": "cross-env node ./webpack.config.js",
+    "build": "node ./webpack.config.js",
     "build:min": "cross-env NODE_ENV=production node ./webpack.config.js",
     "test": "mocha --colors ./test/*.spec.js --require ./test/setup.js",
-    "test:watch": "mocha --colors -w ./test/*.spec.js --require ./test/setup.js"
+    "test:watch": "mocha --colors -w ./test/*.spec.js --require ./test/setup.js",
+    "prepublish": "npm-run-all build build:min test"
   },
   "dependencies": {
     "@babel/core": "7.7.7",
@@ -29,12 +30,15 @@
     "lodash.template": "^4.0.0",
     "objectpath": "^1.2.1",
     "prop-types": "^15.5.10",
+    "npm-run-all": "4.1.5",
     "react-input-mask": "^2.0.4",
     "react-schema-form": "^0.3.2",
+    "mobx-form-store": "git+https://github.com/andreybeloboka/mobx-form-store.git#e0068141d5e4dfcdbf079659febaa005b84bace8",
     "react-toolbox": "^1.3.0 || ^2.0.0 || ^3.0.0 || ^2.0.0-beta.10",
     "sugar": "^2.0.1",
     "webpack": "4.41.4",
     "webpack-cli": "3.3.10",
+    "style-loader": "0.13.1",
     "yargs": "3.32.0"
   },
   "devDependencies": {
@@ -50,19 +54,16 @@
     "jsdom": "^9.9.1",
     "mocha": "^2.3.4",
     "mobx": "^2.2.0 || ^3.0.0 || ^4.0.0 || ^5.0.0",
-    "mobx-form-store": "git+https://github.com/andreybeloboka/mobx-form-store.git#e0068141d5e4dfcdbf079659febaa005b84bace8",
     "mobx-react": "^3.5.0 || ^4.0.0 || ^5.2.5",
     "react": "^15.3.2 || ^16.0.0",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.3.2",
-    "style-loader": "0.13.1",
     "react-test-renderer": "^15.6.2"
   },
   "peerDependencies": {
     "babel-polyfill": "^6.9.1",
     "lodash.template": "^4.0.0",
     "mobx": "^2.2.0 || ^3.0.0 || ^4.0.0 || ^5.0.0",
-    "mobx-form-store": "git+https://github.com/andreybeloboka/mobx-form-store.git#e0068141d5e4dfcdbf079659febaa005b84bace8",
     "mobx-react": "^3.5.0 || ^4.0.0 || ^5.2.5",
     "react": "^15.3.2 || ^16.0.0"
   },
