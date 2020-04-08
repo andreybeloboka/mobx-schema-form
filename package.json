@@ -2,33 +2,42 @@
   "name": "mobx-schema-form",
   "version": "1.9.5",
   "description": "Connects MobX FormStore, React-Schema-Form and React-Toolbox",
-  "main": "./lib",
+  "main": "./build/index.js",
   "scripts": {
-    "build": "babel ./src --out-dir ./lib",
-    "test": "mocha --compilers js:babel-core/register --colors ./test/*.spec.js --require ./test/setup.js",
-    "test:watch": "mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js --require ./test/setup.js",
-    "prepublish": "npm build && npm test"
+    "build": "cross-env node ./webpack.config.js",
+    "build:min": "cross-env NODE_ENV=production node ./webpack.config.js",
+    "test": "mocha --colors ./test/*.spec.js --require ./test/setup.js",
+    "test:watch": "mocha --colors -w ./test/*.spec.js --require ./test/setup.js"
   },
   "dependencies": {
+    "@babel/core": "7.7.7",
+    "@babel/plugin-proposal-class-properties": "7.7.4",
+    "@babel/plugin-proposal-decorators": "7.7.4",
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "7.7.7",
+    "@babel/plugin-transform-destructuring": "7.7.4",
+    "@babel/preset-env": "7.7.7",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "@babel/preset-react": "7.7.4",
+    "@babel/register": "7.7.7",
+    "babel-loader": "8.0.6",
+    "babel-plugin-add-module-exports": "1.0.2",
     "classnames": "^2.2.5",
+    "cross-env": "^7.0.2",
+    "css-loader": "3.4.0",
     "hammerjs": "^2.0.8",
     "lodash.template": "^4.0.0",
     "objectpath": "^1.2.1",
     "prop-types": "^15.5.10",
     "react-input-mask": "^2.0.4",
     "react-schema-form": "^0.3.2",
-    "sugar": "^2.0.1"
+    "react-toolbox": "^1.3.0 || ^2.0.0 || ^3.0.0 || ^2.0.0-beta.10",
+    "sugar": "^2.0.1",
+    "webpack": "4.41.4",
+    "webpack-cli": "3.3.10",
+    "yargs": "3.32.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.0.0",
-    "babel-core": "^6.4.5",
-    "babel-eslint": "^6.1.2",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.3.13",
-    "babel-preset-stage-0": "^6.5.0",
-    "babel-register": "^6.18.0",
     "chai": "^3.5.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-15": "^1.4.0",
@@ -46,8 +55,8 @@
     "react": "^15.3.2 || ^16.0.0",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.3.2",
-    "react-test-renderer": "^15.6.2",
-    "react-toolbox": "^1.3.0 || ^2.0.0 || ^3.0.0 || ^2.0.0-beta.10"
+    "style-loader": "0.13.1",
+    "react-test-renderer": "^15.6.2"
   },
   "peerDependencies": {
     "babel-polyfill": "^6.9.1",
@@ -55,8 +64,7 @@
     "mobx": "^2.2.0 || ^3.0.0 || ^4.0.0 || ^5.0.0",
     "mobx-form-store": "git+https://github.com/andreybeloboka/mobx-form-store.git#e0068141d5e4dfcdbf079659febaa005b84bace8",
     "mobx-react": "^3.5.0 || ^4.0.0 || ^5.2.5",
-    "react": "^15.3.2 || ^16.0.0",
-    "react-toolbox": "^1.3.0 || ^2.0.0 || ^3.0.0 || ^2.0.0-beta.10"
+    "react": "^15.3.2 || ^16.0.0"
   },
   "files": [
     "lib",

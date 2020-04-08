@@ -1,4 +1,5 @@
-import jsdom from 'jsdom';
+require('@babel/register');
+const jsdom = require('jsdom');
 
 if (typeof document === 'undefined') {
   global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');

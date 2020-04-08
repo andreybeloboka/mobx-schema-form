@@ -4,8 +4,8 @@ import Adapter from 'enzyme-adapter-react-15';
 
 import React from 'react';
 import FormStore from 'mobx-form-store';
-import { validateField, asSchemaField } from '../lib';
-import SchemaForm from '../lib/SchemaForm';
+import { validateField, asSchemaField } from '../src';
+import SchemaForm from '../src/SchemaForm';
 
 configure({ adapter: new Adapter() });
 
