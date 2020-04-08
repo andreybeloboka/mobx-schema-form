@@ -6,7 +6,7 @@ import { action } from 'mobx';
 import { getFieldKey, getFieldValue, validateField, getValidationMessage } from './validate';
 import { modelShape, formShape, mapperShape } from './schemaFormPropTypes';
 
-const asSchemaField = (ComposedComponent, fieldType) => observer(class extends React.Component {
+export const asSchemaField = (ComposedComponent, fieldType) => observer(class extends React.Component {
   static propTypes = {
     form: formShape,
     model: modelShape,

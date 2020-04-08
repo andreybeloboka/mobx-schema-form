@@ -7,7 +7,7 @@ import React from 'react';
 import { formShape, modelShape, mapperShape } from './schemaFormPropTypes';
 import SchemaForm from './SchemaForm';
 
-class MobxSchemaForm extends React.Component {
+export class MobxSchemaForm extends React.Component {
   render() {
     let mapper;
     if (this.props.mergeMapper === false) {

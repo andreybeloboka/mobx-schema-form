@@ -1,7 +1,20 @@
-export MobxSchemaForm from './MobxSchemaForm';
-// export * loses auto-completion after transpilation, so specify each export explicitly
-export { getFieldKey, getFieldValue, getValidationMessage, validateField, validateForm, validateAndSave } from './validate';
-export { modelShape, formShape, mapperShape } from './schemaFormPropTypes';
-export asSchemaField from './asSchemaField';
-export FieldWrapper from './FieldWrapper';
-// We do not export this to allow React-Toolbox to be optional: export SaveButton from './SaveButton';
+import { MobxSchemaForm } from './MobxSchemaForm';
+import { getFieldKey, getFieldValue, getValidationMessage, validateField, validateForm, validateAndSave } from './validate';
+import { modelShape, formShape, mapperShape } from './schemaFormPropTypes';
+import { asSchemaField } from './asSchemaField';
+import { FieldWrapper } from './FieldWrapper';
+
+export default {
+  MobxSchemaForm, 
+  getFieldKey,
+  getFieldValue, 
+  getValidationMessage,
+  validateField,
+  validateForm,
+  validateAndSave,
+  modelShape,
+  formShape,
+  mapperShape,
+  asSchemaField,
+  FieldWrapper,
+};

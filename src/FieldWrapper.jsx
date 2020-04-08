@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { formShape } from './schemaFormPropTypes';
 
-const FieldWrapper = (props) => {
+export const FieldWrapper = (props) => {
   return (
     <dl
       data-field-type={props.fieldType || props.formField.type}

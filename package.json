@@ -2,7 +2,7 @@
   "name": "mobx-schema-form",
   "version": "1.9.5",
   "description": "Connects MobX FormStore, React-Schema-Form and React-Toolbox",
-  "main": "./build/index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "build": "cross-env node ./webpack.config.js",
     "build:min": "cross-env NODE_ENV=production node ./webpack.config.js",

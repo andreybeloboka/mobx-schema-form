@@ -17,7 +17,6 @@ if (process.env.NODE_ENV === 'production') {
 
 const config ={
   entry: path.join(__dirname, './src/index.js'),
-  target: 'web',
   mode,
   node: {
     global: true,
@@ -48,6 +47,7 @@ const config ={
   output: {
     filename: outputFile,
     sourcePrefix: '',
+    libraryTarget: 'commonjs2',
     path: path.resolve(__dirname, './lib'),
   },
 
