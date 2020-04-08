@@ -61,42 +61,7 @@ import { formShape, modelShape, mapperShape } from './schemaFormPropTypes';
 
   render() {
     let mapper;
-    if (this.props.mergeMapper === false) {
-      mapper = this.props.mapper;
-    } else {
-      /* eslint-disable global-require */
-      const TextField = require('./TextField');
-      const DateField = require('./DateField');
-      const CheckboxField = require('./CheckboxField');
-      const SwitchField = require('./SwitchField');
-      const RadiosField = require('./RadiosField');
-      const Fieldset = require('./Fieldset');
-      const DropdownField = require('./DropdownField');
-      const BoolLink = require('./BoolLink');
-      const SliderField = require('./SliderField');
-      const Help = require('./Help');
-      /* eslint-enable */
-
-      // mapper is used to map types in form object, not schema object
-      mapper = {
-        date: DateField,
-        text: TextField,
-        email: TextField,
-        password: TextField,
-        number: TextField,
-        tel: TextField,
-        textarea: TextField,
-        checkbox: CheckboxField,
-        switch: SwitchField,
-        radios: RadiosField,
-        fieldset: Fieldset,
-        select: DropdownField,
-        link: BoolLink,
-        range: SliderField,
-        help: Help,
-        ...this.props.mapper,
-      };
-    }
+    mapper = this.props.mapper;
 
     const merged = utils.merge(this.props.schema, this.props.form, this.props.ignore, this.props.options || this.props.option);
     // console.log('SchemaForm merged = ', JSON.stringify(merged, undefined, 2));
