@@ -46,8 +46,7 @@
     "react": "^15.3.2 || ^16.0.0",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.3.2",
-    "react-test-renderer": "^15.6.2",
-    "react-toolbox": "^1.3.0 || ^2.0.0 || ^3.0.0 || ^2.0.0-beta.10"
+    "react-test-renderer": "^15.6.2"
   },
   "peerDependencies": {
     "babel-polyfill": "^6.9.1",
@@ -55,8 +54,7 @@
     "mobx": "^2.2.0 || ^3.0.0 || ^4.0.0 || ^5.0.0",
     "mobx-form-store": "git+https://github.com/andreybeloboka/mobx-form-store.git#e0068141d5e4dfcdbf079659febaa005b84bace8",
     "mobx-react": "^3.5.0 || ^4.0.0 || ^5.2.5",
-    "react": "^15.3.2 || ^16.0.0",
-    "react-toolbox": "^1.3.0 || ^2.0.0 || ^3.0.0 || ^2.0.0-beta.10"
+    "react": "^15.3.2 || ^16.0.0"
   },
   "files": [
     "lib",
@@ -71,7 +69,6 @@
     "form",
     "react",
     "schema",
-    "react-toolbox",
     "validation"
   ],
   "author": "Alex Hisen <alex@am.net>",
